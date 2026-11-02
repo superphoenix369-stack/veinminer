@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "clientveinminer",
+  "version": "${version}",
+  "name": "Client Vein Miner",
+  "description": "Client-side vein miner. Hold a key while mining to break connected ores and logs. Works without the server having the mod.",
+  "authors": ["You"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.example.veinminer.VeinMinerClient"]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": "~${minecraft_version}",
+    "java": ">=25",
+    "fabric-api": "*"
+  }
+}
