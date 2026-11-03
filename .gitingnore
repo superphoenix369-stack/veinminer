@@ -1,0 +1,22 @@
+name: build
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+      # Installs Gradle itself, so no gradlew/wrapper files are needed in the repo.
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: current
+      - name: Build
+        run: gradle build --stacktrace
+      - uses: actions/upload-artifact@v4
+        with:
+          name: gammabar-jar
+          path: build/libs/*.jar
