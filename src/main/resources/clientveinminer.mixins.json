@@ -1,0 +1,8 @@
+{
+  "required": true,
+  "package": "com.example.veinminer.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [
+    "MultiPlayerGameModeMixin"
+  ]
+}
